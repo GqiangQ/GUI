@@ -1,15 +1,24 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3.0 + Vite" />
+  <router-view />
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-
+<script lang="ts">
+import { provide, ref } from 'vue'
+import Topnav from "./components/Topnav.vue"
+import { router} from './router'
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
+  name: 'app',
+  components: { Topnav },
+  setup () {
+    const width = document.documentElement.clientWidth
+    console.log(width)
+    const menuVisible = ref(width > 500 ? true : false)
+    provide('menuVisible',menuVisible)
+    router.afterEach((to,from) => {
+      if(to.fullPath.indexOf('/doc/') === 0 && width < 500){
+        menuVisible.value = false
+      }
+    });
+
   }
 }
-</script>
