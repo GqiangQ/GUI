@@ -1,5 +1,5 @@
 <template>
-  <Switch v-model:value="value"/>
+  <Switch v-model:value="value" disabled />
 </template>
 <script lang="ts">
 import { ref } from 'vue'
@@ -9,7 +9,7 @@ export default {
     Switch
   },
   setup(){
-    const value = ref(false)
+    const value = ref(true)
     const click = (a) => {
       value.value = a
     }

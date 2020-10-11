@@ -1,5 +1,5 @@
 <template>
-  <div @click="toggle" class="g-switch" :class="{'g-switch-checked': value}">
+  <div @click="toggle" class="g-switch" :class="{'g-switch-checked': value,'g-switch-disabled': disabled}">
     <span class="g-ball" />
   </div>
   {{value}}
@@ -10,12 +10,15 @@ import { ref } from 'vue'
 export default {
   props:{
     value: Boolean,
-
+    disabled: {
+      type: Boolean,
+      default:false
+    }
   },
   setup (props,context) {
     const  checked = ref(false)
     const toggle = () => {
-      context.emit('update:value', !props.value)
+      props.disabled ? null : context.emit('update:value', !props.value)
     }
     return {
       checked,toggle
@@ -36,6 +39,7 @@ $hover-color:#06ae56;
   background: #dddddd;
   border-radius: $h/2;
   position: relative;
+  cursor: pointer;
   box-shadow: 0px 0px 2px 1px #afafaf;
   > .g-ball{
     position: absolute;
@@ -48,6 +52,10 @@ $hover-color:#06ae56;
     background: #fff;
     box-shadow: 0px 0px 4px 0px #404040;
     transition: all 250ms;
+  }
+  &-disabled {
+    // pointer-events: none;
+    cursor: not-allowed;
   }
   &-checked {
     background: #07c160;
