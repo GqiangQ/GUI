@@ -1,5 +1,5 @@
 <template>
-  <router-view />
+  <router-view ></router-view>
 </template>
 
 <script lang="ts">
@@ -11,7 +11,6 @@ export default {
   components: { Topnav },
   setup () {
     const width = document.documentElement.clientWidth
-    console.log(width)
     const menuVisible = ref(width > 500 ? true : false)
     provide('menuVisible',menuVisible)
     router.afterEach((to,from) => {
