@@ -30,7 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 $h: 24px;
 $h2: $h - 4px;
 $color:#07c160;
