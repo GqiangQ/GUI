@@ -1,36 +1,21 @@
 <template>
-  <div>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button><button>123132</button>
-
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-    <button>123132</button>
-
-  </div>
+<div >
+  <g-button>默认按钮</g-button>
+  <g-button type="primary" >主要按钮</g-button>
+  <g-button type="success" >成功按钮</g-button>
+  <g-button type="danger" >危险按钮</g-button>
+  <g-button type="warning" >警告按钮</g-button>
+</div>
+  
 </template>
-<style lang="scss" scoped>
-button {
-  display: block;
-  height: 30px;
+<script lang="ts">
+import Button from '../lib/Button.vue'
+export default {
+  components: {
+    'g-button': Button
+  }
 }
+</script>
+<style lang="scss" scoped>
+
 </style>
