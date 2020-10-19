@@ -8,17 +8,20 @@
 <script lang="ts">
 import { ref } from 'vue'
 export default {
+  inheritAttrs: true,
   props:{
     value: Boolean,
     disabled: {
       type: Boolean,
       default:false
-    }
+    },
   },
   setup (props,context) {
     const  checked = ref(false)
     const toggle = () => {
-      props.disabled ? null : context.emit('update:value', !props.value)
+      // if (props.disabled) return
+      // context.emit('change', !props.value)
+      context.emit('update:value', !props.value)
     }
     return {
       checked,toggle
@@ -53,16 +56,16 @@ $hover-color:#06ae56;
     box-shadow: 0px 0px 4px 0px #404040;
     transition: all 250ms;
   }
-  &-disabled {
-    // pointer-events: none;
-    cursor: not-allowed;
-  }
+ 
   &-checked {
     background: #07c160;
     > .g-ball{
     left: calc(100% - #{$h2} - 2px);
     }
   }
-  
+  &-disabled {
+  // pointer-events: none;
+  cursor: not-allowed;
+}
 }
 </style>
