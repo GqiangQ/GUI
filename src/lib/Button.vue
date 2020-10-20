@@ -15,11 +15,11 @@ export default {
     },
     theme: {
       type: String,
-      default: 'button'
+      default: ''
     },
     size: {
       type: String,
-      default: 'normal'
+      default: ''
     }
   },
   setup (props) {
@@ -27,9 +27,9 @@ export default {
     const classes = computed(() => {
        const {type, theme, size} =props
       return {
-        [`g-button-${type}`] : type,
+        [`g-button-type-${type}`] : type,
         [`g-button-theme-${theme}`] : theme,
-        [`g-button-theme-${size}`] : size,
+        [`g-button-size-${size}`] : size,
       }
     })
     return {
@@ -58,7 +58,8 @@ export default {
   padding: 12px 20px;
   font-size: 14px;
   border-radius: 4px;
-  &-primary {
+  // 主题颜色
+  &-type-primary {
     color: #fff;
     background-color:#409eff;
     border-color:#409eff;
@@ -67,7 +68,7 @@ export default {
       border-color:#40a0ffe1;
     }
   }
-  &-success {
+  &-type-success {
     color: #fff;
     background-color: #67c23a;
     border-color:#67c23a;
@@ -76,7 +77,7 @@ export default {
       border-color:#67c23acc;
     }
   }
-  &-danger {
+  &-type-danger {
     color: #fff;
     background-color: #f56c6c;
     border-color: #f56c6c;
@@ -85,7 +86,7 @@ export default {
       border-color:#f56c6ccc;
     }
   }
-  &-warning {
+  &-type-warning {
     color: #fff;
     background-color: #e6a23c;
     border-color:#e6a23c;
@@ -94,6 +95,28 @@ export default {
       border-color:#e6a23ccc;
     }
   }
+  // 按钮类型
+  &-theme-link {
+    border: none;
+    color: #409eff;
+  }
+  &-theme-text {
+    border: none;
+  }
+  &-theme-dashed {
+    border:1px dashed;
+  }
+  
+  // 大小
+  &-size-small {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+  &-size-big {
+    padding: 18px 30px;
+    font-size: 14px;
+  }
+
   & + & {
     margin-left: 8px;
   }

@@ -2,7 +2,7 @@
   <router-view ></router-view>
 </template>
 
-<script lang="ts">
+<script >
 import { provide, ref } from 'vue'
 import Topnav from "./components/Topnav.vue"
 import { router} from './router'
