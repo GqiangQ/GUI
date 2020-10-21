@@ -1,5 +1,8 @@
 <template>
   <button class="g-button" :class="classes">
+    <slot name="icon">
+      
+    </slot>
     <slot />
   </button>
 </template>
