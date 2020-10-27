@@ -4,7 +4,9 @@
     <div class="g-dialog-mask" @click="clickMask"></div>
     <div class="g-dialog-wrapper">
       <div class="g-dialog">
-        <header>header</header>
+        <header>
+          <slot name="header"><slot>
+        </header>
         <main>
           <slot></slot>
         </main>
@@ -56,3 +58,28 @@ export default {
   }
 }
 </script>
+<style  lang="scss" scoped>
+.g-dialog{
+  &-mask{
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #72727212;
+  }
+  &-wrapper{
+    margin: auto;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    background: #72727212;
+    overflow: auto;
+    background: #fff;
+    padding: 1em;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+</style>

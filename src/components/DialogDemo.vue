@@ -2,6 +2,7 @@
   <div>
     <g-button @click="click">log</g-button>
     <Dialog v-model:visible="x" :ok="ok">
+      <slot name="header">111</slot>
       dddddddsdsd
     </Dialog>
   </div>

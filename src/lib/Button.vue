@@ -81,7 +81,7 @@ export default {
   margin: 0;
   transition: .1s;
   font-weight: 500;
-  padding: 12px 20px;
+  padding: 10px 20px;
   font-size: 14px;
   border-radius: 4px;
   &:active{
