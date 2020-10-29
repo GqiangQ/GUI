@@ -5,7 +5,7 @@
     <div class="g-dialog-wrapper">
       <div class="g-dialog">
         <header class="g-dialog-header">
-          <slot name="title" />
+          <slot name="title" >标题</slot>
           {{title}}
           <div class="g-dialog-close"><g-icon @click="clickMask" name="close" /></div>
         </header>
@@ -39,6 +39,9 @@ export default {
     ok: {
       type: Function
     },
+    cancel: {
+      type: Function
+    }
   },
   components: {
     'g-button': Button,
@@ -46,6 +49,7 @@ export default {
   },
   setup (props, context) {
     const close = () => {
+      props.cancel?.()
       context.emit('update:visible', false)
     }
     const clickMask = () => {
@@ -54,7 +58,7 @@ export default {
     }
     const ok = ()=> {
       if(props.ok?.() !== false) {
-        close()
+        context.emit('update:visible', false)
       }
     }
     return {
@@ -106,9 +110,6 @@ export default {
     cursor: pointer;
     top: 14px;
     line-height: 1;
-  }
-  &-main{
-    
   }
   &-footer{
     display: flex;

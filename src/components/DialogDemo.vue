@@ -1,8 +1,9 @@
 <template>
   <div>
+    <g-button @click="click1">函数引用</g-button>
     <g-button @click="click">log</g-button>
-    <Dialog v-model:visible="x" title="title" :ok="ok">
-      <template v-slot:title>
+    <Dialog v-model:visible="x" :ok="ok"  :cancel="cancel">
+      <template #title>
         我是提示
       </template>
       12313
@@ -11,6 +12,7 @@
 </template>
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
+import Fdialog from '../lib/Fdialog'
 import Button from '../lib/Button.vue'
 import Vue, { ref } from 'vue'
 export default {
@@ -24,11 +26,25 @@ export default {
       x.value = !x.value
     }
     const ok = () => {
-      console.log('ok')
-      return false
+      console.log('dialog,ok')
+    }
+    const click1 = () => {
+      Fdialog({
+        title:'提示！！！',
+        content: 'are you sure??',
+        ok: () => {
+          console.log('f:, ok')
+        },
+        cancel: () => {
+          console.log('cancel:f')
+        }
+      })
+    }
+    const cancel = () => {
+      console.log('dialog, cancel')
     }
     return {
-      x,click, ok
+      x,click, ok, click1, cancel
     }
   }
 }
