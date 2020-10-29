@@ -5,12 +5,13 @@
     <div class="g-dialog-wrapper">
       <div class="g-dialog">
         <header class="g-dialog-header">
+          <slot name="title" />
           {{title}}
           <div class="g-dialog-close"><g-icon @click="clickMask" name="close" /></div>
         </header>
-        
         <main class="g-dialog-main" >
-          <slot></slot>
+          <slot name="content"/>
+          <slot/>
         </main>
         <footer class="g-dialog-footer">
           <g-button @click="close">取消</g-button>
@@ -38,10 +39,6 @@ export default {
     ok: {
       type: Function
     },
-    title:{
-      type:String,
-      default: '标题'
-    }
   },
   components: {
     'g-button': Button,
@@ -61,7 +58,7 @@ export default {
       }
     }
     return {
-      close, ok, clickMask, title:props.title
+      close, ok, clickMask,
     }
   }
 }

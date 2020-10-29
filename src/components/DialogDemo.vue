@@ -2,9 +2,10 @@
   <div>
     <g-button @click="click">log</g-button>
     <Dialog v-model:visible="x" title="title" :ok="ok">
-      <template slot="header">
-        00
+      <template v-slot:title>
+        我是提示
       </template>
+      12313
     </Dialog>
   </div>
 </template>
