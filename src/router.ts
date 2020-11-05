@@ -2,14 +2,12 @@ import { createWebHashHistory, createRouter } from "vue-router"
 import Home from "./views/Home.vue"
 import Doc from "./views/Doc.vue"
 import DocDemo from './components/DocDemo.vue'
-import SwitchDemo from './components/SwitchDemo.vue'
+import SwitchDemo from './components/Switch/index.vue'
 import ButtonDemo from './components/ButtonDemo.vue'
 import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
 
-import Intro from './views/Intro.vue'
-import Started from './views/Started.vue'
-import Install from './views/Install.vue'
+
 import MackDown from './views/MackDown.vue'
 import { h } from "vue"
 
