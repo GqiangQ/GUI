@@ -3,13 +3,14 @@
 </template>
 
 <script lang="ts" >
+import { mapState } from 'vuex'
 import { provide, ref } from 'vue'
 import Topnav from "./components/Topnav.vue"
 import { router} from './router'
 export default {
   name: 'app',
   components: { Topnav },
-  setup () {
+  setup (props, content,) {
     const width = document.documentElement.clientWidth
     const menuVisible = ref(width > 500 ? true : false)
     provide('menuVisible',menuVisible)

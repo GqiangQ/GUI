@@ -2046,6 +2046,11 @@ vue@^3.0.0-rc.1, vue@^3.0.0-rc.5:
     "@vue/runtime-dom" "3.0.0"
     "@vue/shared" "3.0.0"
 
+vuex@4.0.0-rc.1:
+  version "4.0.0-rc.1"
+  resolved "https://registry.npm.taobao.org/vuex/download/vuex-4.0.0-rc.1.tgz?cache=0&sync_timestamp=1604065438225&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fvuex%2Fdownload%2Fvuex-4.0.0-rc.1.tgz#160cd5957972a61c7c01ab585995b78e092a298d"
+  integrity sha1-FgzVlXlyphx8AatYWZW3jgkqKY0=
+
 wcwidth@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/wcwidth/download/wcwidth-1.0.1.tgz#f0b0dcf915bc5ff1528afadb2c0e17b532da2fe8"
