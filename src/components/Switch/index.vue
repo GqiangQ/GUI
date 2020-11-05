@@ -8,7 +8,21 @@
       <dome1/>
     </div>
     <div class="card-code">
-      {{'<Switch v-model:value="value"/>'}}
+       <pre class="card-code">{{dome1.__sourceCode}}</pre>
+    </div>
+    <div class="card-footer">
+      <Button>查看代码 </Button>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-title">
+      常规用法
+    </div>
+    <div class="card-view">
+      <dome1/>
+    </div>
+    <div class="card-code">
+       <pre class="card-code">{{dome1.__sourceCode}}</pre>
     </div>
     <div class="card-footer">
       <Button>查看代码 </Button>
@@ -16,25 +30,17 @@
   </div>
 </template>
 <script lang="ts">
-import dome1 from './components/dome1.vue'
+import dome1 from './components/demo1.vue'
+import dome2 from './components/demo2.vue'
 import Button from '../../lib/Button.vue'
+console.log(dome1.__sourceCode)
 export default {
   components:{
-    dome1, Button
+    dome1, dome2, Button
   },
-  // setup(){
-  //   const value = ref(true)
-  //   const click = (a) => {
-  //     value.value = a
-  //   }
-  //   const change = () => {
-  //     console.log('change')
-  //   }
-  //   return {
-  //     value,
-  //     click
-  //   }
-  // }
+  setup(){
+    return { dome1, dome2,  }
+  }
 }
 </script>
 <style lang="scss" scoped>
