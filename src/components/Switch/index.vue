@@ -5,10 +5,10 @@
       常规用法
     </div>
     <div class="card-view">
-      <dome1/>
+      <component :is="demo1"/>
     </div>
     <div class="card-code">
-       <pre class="card-code">{{dome1.__sourceCode}}</pre>
+       <pre class="card-code">{{demo1.__sourceCode}}</pre>
     </div>
     <div class="card-footer">
       <Button>查看代码 </Button>
@@ -19,10 +19,10 @@
       常规用法
     </div>
     <div class="card-view">
-      <dome1/>
+      <component :is="demo2"/>
     </div>
     <div class="card-code">
-       <pre class="card-code">{{dome1.__sourceCode}}</pre>
+       <pre class="card-code">{{demo2.__sourceCode}}</pre>
     </div>
     <div class="card-footer">
       <Button>查看代码 </Button>
@@ -30,16 +30,16 @@
   </div>
 </template>
 <script lang="ts">
-import dome1 from './components/demo1.vue'
-import dome2 from './components/demo2.vue'
+import demo1 from './components/demo1.vue'
+import demo2 from './components/demo2.vue'
 import Button from '../../lib/Button.vue'
-console.log(dome1.__sourceCode)
+
 export default {
   components:{
-    dome1, dome2, Button
+    Button
   },
   setup(){
-    return { dome1, dome2,  }
+    return { demo1, demo2}
   }
 }
 </script>
