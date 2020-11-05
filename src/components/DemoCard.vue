@@ -7,7 +7,7 @@
       <component :is="component"/>
     </div>
     <div class="card-code">
-       <pre class="language-css" v-html="Prism.highlight(component.__sourceCode,  Prism.languages.html, 'html')" />
+       <pre class="language-css" v-html="html" />
     </div>
     <div class="card-footer">
       <Button>查看代码 </Button>
@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts">
-import Vue from 'vue'
+import Vue, { computed } from 'vue'
 import 'prismjs'
 import 'prismjs/themes/prism-coy.css'
 
@@ -30,9 +30,12 @@ export default {
   components: {
     Button
   },
-  setup () {
+  setup (props) {
+    const html = computed(() => {
+      return Prism.highlight(props.component.__sourceCode,  Prism.languages.html, 'html')
+    })
     return {
-      Prism
+      Prism, html
     }
   }
 }
