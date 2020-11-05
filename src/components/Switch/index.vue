@@ -8,7 +8,7 @@
       <component :is="demo1"/>
     </div>
     <div class="card-code">
-       <pre class="card-code">{{demo1.__sourceCode}}</pre>
+       <pre class="language-css" v-html="Prism.highlight(demo1.__sourceCode,  Prism.languages.html, 'html')" />
     </div>
     <div class="card-footer">
       <Button>查看代码 </Button>
@@ -22,7 +22,7 @@
       <component :is="demo2"/>
     </div>
     <div class="card-code">
-       <pre class="card-code">{{demo2.__sourceCode}}</pre>
+       <pre>{{demo2.__sourceCode}}</pre>
     </div>
     <div class="card-footer">
       <Button>查看代码 </Button>
@@ -33,13 +33,18 @@
 import demo1 from './components/demo1.vue'
 import demo2 from './components/demo2.vue'
 import Button from '../../lib/Button.vue'
+import 'prismjs'
+import 'prismjs/themes/prism.css'
 
+const Prism = (window as any).Prism
+
+console.log(Prism)
 export default {
   components:{
     Button
   },
   setup(){
-    return { demo1, demo2}
+    return { demo1, demo2, Prism}
   }
 }
 </script>
