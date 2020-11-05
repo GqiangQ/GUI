@@ -2,7 +2,6 @@
   <div @click="toggle" class="g-switch" :class="{'g-switch-checked': value,'g-switch-disabled': disabled}">
     <span class="g-ball" />
   </div>
-  {{value}}
 </template>
 
 <script lang="ts">
