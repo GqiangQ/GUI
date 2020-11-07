@@ -185,4 +185,9 @@ export default {
   }
  
 }
+@media (max-width: 500px) {
+    .card-code-content-copy{
+      top: 3px;
+    }
+  }
 </style>
