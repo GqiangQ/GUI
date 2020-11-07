@@ -7,9 +7,15 @@ import ButtonDemo from './components/ButtonDemo.vue'
 import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
 
+import Intro from './mackdown/Intro.md'
+import Started from './mackdown/Started.md'
+import Install from './mackdown/Install.md'
 
 import MackDown from './views/MackDown.vue'
 import { h } from "vue"
+
+
+const md = string => h(MackDown, {content: string, key:string})
 
 const history = createWebHashHistory();
 export const router = createRouter({
@@ -21,9 +27,9 @@ export const router = createRouter({
       component: Doc,
       children: [
         { path: "", component: DocDemo },
-        { path: "intro", component: h(MackDown, {path:'Intro.md',key:'Intro'}) },
-        { path: "started", component: h(MackDown, {path:'Started.md',key:'Started'}) },
-        { path: "install", component: h(MackDown, {path:'Install.md',key:'Install'}) },
+        { path: "intro", component: md(Intro) },
+        { path: "started", component: md(Started) },
+        { path: "install", component: md(Install) },
         { path: "switch", component: SwitchDemo },
         { path: "button", component: ButtonDemo },
         { path: "dialog", component: DialogDemo },
