@@ -7,6 +7,7 @@
       <component :is="component"/>
     </div>
     <div class="card-code">
+      <div v-html="describe"></div>
        <pre class="language-css" v-html="html" />
     </div>
     <div class="card-footer">
@@ -25,17 +26,19 @@ const Prism = (window as any).Prism
 
 export default {
   props: {
-    component:Object
+    component:Object,
+    describe:String
   },
   components: {
     Button
   },
   setup (props) {
+    console.log(props.describe)
     const html = computed(() => {
       return Prism.highlight(props.component.__sourceCode,  Prism.languages.html, 'html')
     })
     return {
-      Prism, html
+      Prism, html, 
     }
   }
 }
@@ -55,6 +58,9 @@ export default {
   }
   &-code{
     padding: 15px;
+    pre[class*="language-"]::before,pre[class*="language-"]::after{
+      box-shadow: none;
+    }
   }
 }
 </style>

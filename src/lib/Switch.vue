@@ -18,7 +18,7 @@ export default {
   setup (props,context) {
     const  checked = ref(false)
     const toggle = () => {
-      // if (props.disabled) return
+      if (props.disabled) return
       // context.emit('change', !props.value)
       context.emit('update:value', !props.value)
     }
@@ -36,6 +36,10 @@ $color:#07c160;
 $hover-color:#06ae56;
 
 .g-switch{
+  display: inline-block;
+  & + & {
+    margin-left: 2em;
+  }
   height: $h;
   width: $h*2;
   background: #dddddd;
@@ -63,7 +67,7 @@ $hover-color:#06ae56;
     }
   }
   &-disabled {
-  // pointer-events: none;
+  filter: grayscale(70%);
   cursor: not-allowed;
 }
 }

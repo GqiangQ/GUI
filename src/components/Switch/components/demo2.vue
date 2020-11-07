@@ -1,8 +1,9 @@
 <demo>
-常规用法12312313
+disabled 用法
 </demo>
 <template>
-  <Switch v-model:value="value"/>
+  <Switch v-model:value="value1" disabled />
+  <Switch v-model:value="value2" disabled />
 </template>
 
 <script lang="ts">
@@ -14,9 +15,10 @@ export default {
     Switch
   },
   setup(){
-    const value = ref(true)
+    const value1 = ref(true)
+    const value2 = ref(false)
     return {
-      value
+      value1, value2
     }
   }
 }
