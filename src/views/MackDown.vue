@@ -14,7 +14,6 @@ export default {
   },
   setup (props, content) {
     const mdHTML = ref<String>(null)
-    console.log('../mackdown/Intro.md'=== `../mackdown/${props.path}`)
     import(`../mackdown/${props.path}`).then(res => {
       mdHTML.value = res.default
     })
