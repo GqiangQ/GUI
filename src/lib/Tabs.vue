@@ -82,7 +82,6 @@ export default{
     }
     // 计算选中的值
     const selectedItemContent = computed(() => {
-      console.log('change')
       return defaults.find(item => item.props.value === props.selected)
     })
     return {

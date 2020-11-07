@@ -1,2 +1,1 @@
- ### dfadfa
- `````
+绑定`v-model`到一个`Boolean`类型的变量
