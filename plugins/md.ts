@@ -22,6 +22,7 @@ const mdToJs = str => {
 }
 
 export function md() {
+  console.log('123456789')
   return {
     configureServer: [ // 用于开发
       async ({ app }) => {

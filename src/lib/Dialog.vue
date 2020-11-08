@@ -10,7 +10,7 @@
           <div class="g-dialog-close"><g-icon @click="clickMask" name="close" /></div>
         </header>
         <main class="g-dialog-main" >
-          <slot name="content"/>
+          <slot name="content" />
           <slot/>
         </main>
         <footer class="g-dialog-footer">
@@ -24,6 +24,7 @@
 </template>
 
 <script lang="ts">
+import { ref } from 'vue'
 import Button from './Button.vue' 
 import Icon from './Icon.vue'
 export default {
@@ -62,7 +63,7 @@ export default {
       }
     }
     return {
-      close, ok, clickMask,
+      close, ok, clickMask
     }
   }
 }
@@ -88,7 +89,6 @@ export default {
     background: #fff;
     left: 50%;
     top: 50%;
-    min-width: 400px;
     transform: translate(-50%, -50%);
   }
   &-header, &-main, &-footer {

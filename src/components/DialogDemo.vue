@@ -12,7 +12,7 @@
 </template>
 <script lang="ts">
 import Dialog from '../lib/Dialog.vue'
-import Fdialog from '../lib/Fdialog'
+import Fdialog from '../lib/Confirm'
 import Button from '../lib/Button.vue'
 import Vue, { ref } from 'vue'
 export default {
@@ -31,7 +31,7 @@ export default {
     const click1 = () => {
       Fdialog({
         title:'提示！！！',
-        content: 'are you sure??',
+        content: 'are you sure??<div></div>',
         ok: () => {
           console.log('f:, ok')
         },
