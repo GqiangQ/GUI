@@ -1,6 +1,6 @@
 <template>
-  <!-- <teleport to="#gAlertWrap" v-if="visible"> -->
-    <!-- <div class="g-alert" > -->
+  <teleport to=".g-alert-wrap" v-if="visible">
+    <div class="g-alert" v-if="visible" >
       <div class="g-alert-icon">
       </div>
       <div>
@@ -8,10 +8,10 @@
         <div class="g-alert-content">{{content}}</div>
       </div>
       <div class="g-alert-close">
-        <Icon name="style1-error" />
+        <Icon name="style1-error" @click="close"  />
       </div>
-    <!-- </div> -->
-  <!-- </teleport> -->
+    </div>
+  </teleport>
 </template>
 
 <script lang="ts">
@@ -35,46 +35,82 @@ export default {
     banner: Boolean,
     title:String,
     content:String,
-    visible:Boolean
+    visible:Boolean,
+    duration: {
+      type:Number,
+      default:3000
+    }
   },
   setup (props,content) {
     onMounted(()=>{
-        setTimeout(()=>{
-          content.emit('update:visible', false)
-        },5000)
+      // setTimeout(()=>{
+      //   content.emit('update:visible', false)
+      // },props.duration)
     })
+    const visible = ref(true)
+    const close = ()=>{
+      visible.value = false
+      // content.emit('update:visible', false)
+    }
+    return {
+      close,visible
+    }
   }
 }
 </script>
 
 <style>
-@keyframes fade-in {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0%);
-  }
-}
+
 .g-alert-wrap{
-  position: fixed;
-  z-index: 1000;
-  left: 50%;
-  transform: translateX(50%);
-  animation: fade-in 1s;
+  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: rgba(0,0,0,.65);
+    font-size: 14px;
+    font-variant: tabular-nums;
+    line-height: 1.5;
+    list-style: none;
+    font-feature-settings: "tnum";
+    position: fixed;
+    top: 16px;
+    left: 0;
+    z-index: 1010;
+    width: 100%;
+    pointer-events: none;
+    display: flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 </style>
 <style lang='scss' scoped>
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+    transform:translateX(-50%);
+    margin-top: -1em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+    transform:translateX(-50%);
+    margin-top: .5em;
+  }
+}
 .g-alert{
-  // position: relative;
-  // z-index: 1000;
-  // width: 300px;
-  // z-index: 1000;
+  animation:fade-in .5s;
+  position: relative;
+  transform:translateX(-50%);
+  left: 50%;
+  width: fit-content;
+  display: flex;
   padding: .5em 1em;
   margin-top: .5em;
   border: 1px solid #000;
+  border-radius: 4px;
+  background: aqua;
+  pointer-events:all;
 }
 </style>

@@ -8,9 +8,9 @@ const alert = (options) => {
     document.body.insertBefore(gAlertWrap,document.body.firstElementChild); 
   }
   const div = document.createElement('div')
-  div.setAttribute('class','g-alert')
-  gAlertWrap.appendChild(div)
-  // document.body.insertBefore(div,document.body.firstElementChild); 
+  // div.setAttribute('class','g-alert')
+  // gAlertWrap.appendChild(div)
+  document.body.insertBefore(div,document.body.firstElementChild); 
   const app = createApp({
     render () {
       // h 第一个参数是组件 第二个是属性，第三个是solt
@@ -22,6 +22,9 @@ const alert = (options) => {
             if (!newVisible){
               app.unmount(div)
               div.remove()
+              if (!gAlertWrap.childElementCount) {
+                gAlertWrap.remove()
+              }
             }
           },
         }
@@ -32,7 +35,7 @@ const alert = (options) => {
     // updated(){
     //   visible:()=>{
     //     console.log('updated')
-    //   app.unmount(div)
+      // app.unmount(div)
     //   }
       
     // },
