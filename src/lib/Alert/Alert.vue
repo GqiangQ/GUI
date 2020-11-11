@@ -1,10 +1,11 @@
 <template>
-  <teleport to=".g-alert-wrap" v-if="visible">
+  <teleport to=".g-alert-wrap">
     <div class="g-alert" v-if="visible" >
       <div class="g-alert-icon">
+        <Icon name="style2-success" />
       </div>
       <div>
-        <div class="g-alert-title">{{title}}</div>
+        <!-- <div class="g-alert-title">{{title}}</div> -->
         <div class="g-alert-content">{{content}}</div>
       </div>
       <div class="g-alert-close">
@@ -50,7 +51,7 @@ export default {
     const visible = ref(true)
     const close = ()=>{
       visible.value = false
-      // content.emit('update:visible', false)
+      content.emit('update:visible', false)
     }
     return {
       close,visible
@@ -110,7 +111,14 @@ export default {
   margin-top: .5em;
   border: 1px solid #000;
   border-radius: 4px;
-  background: aqua;
+  background: #97e4e4;
   pointer-events:all;
+  &-icon{
+    font-size: 1.3em;
+  }
+  &-title{
+    font-size:1.3em;
+    font-weight: 400;
+  }
 }
 </style>
