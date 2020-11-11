@@ -12,6 +12,7 @@
         <div class="card-code-content-copy" @click="copy">
           <g-icon name="style2-copy"/>copy
         </div>
+        <div class="card-code-content-alert" :class="{'card-code-content-alert-active':copyVisible}">复制成功</div>
         <pre :id="html" class="language-css" v-html="html" />
       </div>
     </div>
@@ -29,7 +30,7 @@ import 'prismjs/themes/prism-okaidia.css'
 import Icon from '../lib/Icon.vue'
 
 const Prism = (window as any).Prism
-
+let time = null
 export default {
   props: {
     component:Object,
@@ -45,7 +46,7 @@ export default {
     const code = ref<HTMLPreElement>(null)
     const visible = ref(false)
     const codeChildrenSize = computed(()=>{
-      return code.value.children[1].getBoundingClientRect()
+      return code.value.children[2].getBoundingClientRect()
     })
     const changeHeight = () => {
       console.log('change')
@@ -61,19 +62,18 @@ export default {
     watch(visible,changeHeight)
     const copy = (e) => {
       navigator.clipboard.writeText(props.component.__sourceCode).then(res=>{
+        copyVisible.value = true
+        let time = setTimeout(()=>{
+          copyVisible.value = false
+          clearTimeout(time)
+        },2500)
       }).catch(err=>{
         alert('err')
       })
-		        // oInput.select()
-		        // document.execCommand('Copy')
-		        // Toast({
-		        //   content: '复制成功',
-		        //   duration: 2000
-		        // })
-		        // oInput.remove()
     }
+    const copyVisible = ref(false)
     return {
-      Prism, html, visible, code, copy
+      Prism, html, visible, code, copy, copyVisible
     }
   },
   // watch:{
@@ -130,6 +130,7 @@ export default {
         top: 3px;
       }
       &-copy{
+        font-size: .8em;
         transition: all 300ms;
         position: absolute;
         fill: #adaaaa;
@@ -145,6 +146,22 @@ export default {
         &:hover{
           color: #12b9b9;
           fill: #12b9b9;
+        }
+      }
+      &-alert{
+        transition: all .3s;
+        position:absolute;
+        top: -100%;
+        opacity: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: .5em .8em;
+        border: 1px solid #456;
+        background: #456;
+        color: #fff;
+        &-active{
+          top: 3px;
+          opacity: 1;
         }
       }
     }
