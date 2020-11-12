@@ -17,7 +17,7 @@ export default {
   },
   setup(){
     const success = (type) => {
-      Alert({title:type,content:'121232131'})
+      Alert({title:type,type,content:'1212121321321321332131'})
     }
     return {
       success
