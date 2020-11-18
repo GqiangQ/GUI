@@ -1,8 +1,8 @@
 <template>
-  <article class="mackdown-body" v-html="content" />
+  <article class="article-wrapper markdown-body " v-html="content" />
 </template>
-
 <script lang="ts">
+import 'github-markdown-css'
 import { ref } from 'vue'
 export default {
   name: 'stated',
@@ -14,3 +14,10 @@ export default {
   },
 }
 </script>
+<style lang='scss' scoped>
+.article-wrapper{
+  max-width: 850px;
+  margin: auto;
+  padding: 40px 0;
+}
+</style>
