@@ -1,5 +1,5 @@
 <template>
-<h1>Switch 组件示例</h1>
+  <h1>Switch 组件示例</h1>
   <card :component="demo1" :describe='md1' />
   <card :component="demo2" :describe='md2' />
   <div v-html="use"></div>

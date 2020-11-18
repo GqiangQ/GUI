@@ -44,4 +44,8 @@ export default {
       width: 10px;
     background: #ff00003a;
 }
+.main-box{
+  max-width: 1000px;
+  margin: auto;
+}
 </style>

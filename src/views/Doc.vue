@@ -35,7 +35,9 @@
           </ol>
         </aside>
         <main>
+        <div class="main-box">
           <router-view/>
+        </div>  
         </main>
     </div>
 </div>
