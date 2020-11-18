@@ -24,9 +24,6 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-.markdown-body >table {
-  display: inline;
-}
 .api{
   width: 100%;
 }
