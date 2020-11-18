@@ -48,4 +48,8 @@ export default {
   max-width: 1000px;
   margin: auto;
 }
+.markdown-body table {
+  display: inline-table;
+  text-align: left;
+}
 </style>
