@@ -44,9 +44,9 @@ export default {
   },
   setup (props,content) {
     onMounted(()=>{
-      // setTimeout(()=>{
-      //   content.emit('update:visible', false)
-      // },props.duration)
+      setTimeout(()=>{
+        content.emit('update:visible', false)
+      },props.duration)
     })
     const visible = ref(true)
     const close = ()=>{
