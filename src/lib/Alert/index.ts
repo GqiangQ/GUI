@@ -30,37 +30,22 @@ const alert = (options) => {
         }
       )
     },
-    // mounted() {
-    // },
-    // updated(){
-    //   visible:()=>{
-    //     console.log('updated')
-      // app.unmount(div)
-    //   }
-      
-    // },
-    // beforeCreate (){
-    //   console.log('beforeCreate')
-    // },
-    // onBeforeUnmount () {
-    //   console.log('onBeforeUnmount')
-    // }
   }
   )
   console.log(app)
   app.mount(div)
 }
 
-alert.success = (a)=>{
-  console.log(a)
+alert.success = (options)=>{
+  alert({ type:'success', ...options })
 }
-alert.wraning = (a)=>{
-  console.log(a)
+alert.wraning = (options)=>{
+  alert({ type:'wraning', ...options })
 }
-alert.info = (a)=>{
-  console.log(a)
+alert.info = (options)=>{
+  alert({ type:'info', ...options })
 }
-alert.error = (a)=>{
-  console.log(a)
+alert.error = (options)=>{
+  alert({ type:'error', ...options })
 }
 export default alert
