@@ -5,9 +5,8 @@ import DocDemo from './components/DocDemo.vue'
 import SwitchDemo from './components/Switch/index.vue'
 import Alert from './components/Alert/index.vue'
 import button from './components/button/index.vue'
+import dialog from './components/dialog/index.vue'
 
-import ButtonDemo from './components/ButtonDemo.vue'
-import DialogDemo from './components/DialogDemo.vue'
 import TabsDemo from './components/TabsDemo.vue'
 
 import Intro from './mackdown/Intro.md'
@@ -36,7 +35,7 @@ export const router = createRouter({
         { path: "switch", component: SwitchDemo },
         { path: "alert", component: Alert },
         { path: "button", component: button },
-        { path: "dialog", component: DialogDemo },
+        { path: "dialog", component: dialog },
         { path: "tabs", component: TabsDemo },
       ],
     },
