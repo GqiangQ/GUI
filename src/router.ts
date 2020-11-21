@@ -6,6 +6,7 @@ import SwitchDemo from './components/Switch/index.vue'
 import Alert from './components/Alert/index.vue'
 import button from './components/button/index.vue'
 import dialog from './components/dialog/index.vue'
+import tabs from './components/tabs/index.vue'
 
 import TabsDemo from './components/TabsDemo.vue'
 
@@ -36,7 +37,7 @@ export const router = createRouter({
         { path: "alert", component: Alert },
         { path: "button", component: button },
         { path: "dialog", component: dialog },
-        { path: "tabs", component: TabsDemo },
+        { path: "tabs", component: tabs },
       ],
     },
   ],

@@ -49,14 +49,14 @@ export default{
       })
     })
     // 加了这个才可以实时选中
-    // onUpdated(()=>{
-    //     const {width} = selectedItem.value.getBoundingClientRect()
-    //     selectedLine.value.style.width = width + 'px'
-    //     const {left: left1} = selectedItem.value.getBoundingClientRect()
-    //     const {left: left2} = tabNav.value.getBoundingClientRect()
-    //     const left = left1 - left2
-    //     selectedLine.value.style.left = left + 'px'
-    // })
+    onUpdated(()=>{
+        const {width} = selectedItem.value.getBoundingClientRect()
+        selectedLine.value.style.width = width + 'px'
+        const {left: left1} = selectedItem.value.getBoundingClientRect()
+        const {left: left2} = tabNav.value.getBoundingClientRect()
+        const left = left1 - left2
+        selectedLine.value.style.left = left + 'px'
+    })
     let title = []  // title集合
     const defaults = content.slots.default()// 显示的内容
     defaults.forEach(item => {

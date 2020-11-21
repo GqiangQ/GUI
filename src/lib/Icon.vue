@@ -3,7 +3,7 @@
     <use :xlink:href="`#g-${name}`"></use>
   </svg>
 </template>
-  
+   
 <script lang="ts">
 import './svg'
 import Vue, { onMounted, ref } from 'vue'
