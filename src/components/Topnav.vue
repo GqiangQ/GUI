@@ -2,8 +2,9 @@
   <div class="topnav">
     <div class="logo">LOGO</div>
     <ul class="menu">
-      <li>菜单1</li>
-      <li>菜单2</li>
+      <li>GitHub</li>
+      <li>码云</li>
+      <li>博客</li>
     </ul>
     <span class="toggleAside" @click="toggleMenu"></span>
   </div>
@@ -22,7 +23,7 @@ export default {
 </script>
 <style lang="scss" scoped>
 .topnav {
-  background: pink;
+  background: #fff;
   display: flex;
   padding: 16px;
   position: fixed;
@@ -32,6 +33,7 @@ export default {
   z-index: 10;
   justify-content: center;
   align-items: center;
+  box-shadow: 0px 2px 1px 0px #12b9b92c;
   > .logo {
     max-width: 6em;
     margin-right: auto;
@@ -41,7 +43,10 @@ export default {
     white-space: nowrap;
     flex-wrap: nowrap;
     > li {
-      margin: 0 1em;
+      margin: 0 1.5em;
+      color: #059494;
+      font-weight: 600;
+      font-size: 17px;
     }
   }
   > .toggleAside {

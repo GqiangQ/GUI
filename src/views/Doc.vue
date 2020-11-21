@@ -18,19 +18,19 @@
           <h2>组件列表</h2>
           <ol>
             <li>
-              <router-link to="/doc/switch">Switch 组件</router-link>
+              <router-link to="/doc/switch">switch 组件</router-link>
             </li>
             <li>
-              <router-link to="/doc/alert">Alert 组件</router-link>
+              <router-link to="/doc/alert">alert 组件</router-link>
             </li>
             <li>
-              <router-link to="/doc/button">Button 组件</router-link>
+              <router-link to="/doc/button">button 组件</router-link>
             </li>
             <li>
-              <router-link to="/doc/dialog">Dialog 组件</router-link>
+              <router-link to="/doc/dialog">sialog 组件</router-link>
             </li>
             <li>
-              <router-link to="/doc/tabs">Tabs 组件</router-link>
+              <router-link to="/doc/tabs">tabs 组件</router-link>
             </li>
           </ol>
         </aside>
@@ -85,17 +85,20 @@ export default {
   }
 }
 aside {
-  background: lightblue;
-  width: 150px;
+  width: 260px;
   padding: 16px 0;
+  background: #ffffff;
   position: fixed;
+  z-index: 9;
   top: 0;
   left: 0;
   padding-top: 70px;
   height: 100%;
+  border: 1px solid #9d9da5;
   > h2 {
-    margin-bottom: 4px;
-    padding: 0 16px;
+    font-size: 19px;
+    margin: .5em 0;
+    padding: 0 .8em;
   }
   > ol {
     > li {
@@ -103,15 +106,32 @@ aside {
         &:hover{border: none;}
         text-decoration: none;
         display: block;
-        padding: 4px 16px;
+        padding: .7em 1.8em;
       }
       .router-link-active{
-        background: #fff;
+        position: relative;
+        background: #12b9b96b;
+        &::after{
+          position: absolute;
+          top: 0;
+          right: 0;
+          content: ' ';
+          display: block;
+          width: 5px;
+          height: 100%;
+          background:#12b9b9;
+        }
       }
     }
   }
 }
 main {
   overflow: auto;
+  @media (max-width: 1500px) {
+    margin-left: 100px; 
+  }
+  @media (max-width: 500px) {
+    margin: auto; 
+  }
 }
 </style>
