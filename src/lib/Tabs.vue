@@ -37,7 +37,6 @@ export default{
    
     // 生命周期执行的内容
     onMounted(()=>{
-      console.log('onMounted:')
       watchEffect(() => {
         const {width} = selectedItem.value.getBoundingClientRect()
         selectedLine.value.style.width = width + 'px'
@@ -67,7 +66,6 @@ export default{
       if(item && item.type !== Tab){
         throw new Error('Tabs 子标签必须是Tab')
       }
-      console.log(title)
     })
 
     // 触发点击事件跟新代码

@@ -23,7 +23,6 @@ export default {
   setup(){
     const value = ref(false)
     const ok = () => {
-      console.log('ok')
       return false
     }
     const cancel = (visible) =>{

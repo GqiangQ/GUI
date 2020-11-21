@@ -32,7 +32,6 @@ const alert = (options) => {
     },
   }
   )
-  console.log(app)
   app.mount(div)
 }
 

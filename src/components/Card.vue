@@ -49,7 +49,6 @@ export default {
       return code.value.children[2].getBoundingClientRect()
     })
     const changeHeight = () => {
-      console.log('change')
       if(!visible.value) {
         code.value.style.height = '0px'
         visible.value = false
@@ -76,11 +75,6 @@ export default {
       Prism, html, visible, code, copy, copyVisible
     }
   },
-  // watch:{
-  //   visible: (...a) =>{
-  //     console.log(visible)
-  //   }
-  // }
 }
 </script>
 <style lang="scss" scoped>

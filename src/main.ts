@@ -9,13 +9,11 @@ import 'nprogress/nprogress.css'
 import { router } from './router';
 
   router.beforeEach((to, from, next) => {
-    console.log('start')
     nprogress.start();
     next();
   })
   router.afterEach(() => {
     nprogress.done();
-    console.log('end')
   })
 
 

@@ -14,13 +14,6 @@ export default {
     color:String
   },
   setup() {
-    // const svg = ref<HTMLOrSVGScriptElement>(null)
-    // onMounted(() => {
-    //   // console.log(svg.value.getAttribute('fill'))// <div/>
-    // })
-    // return {
-    //   svg,
-    // }
   },
 }
 </script>
