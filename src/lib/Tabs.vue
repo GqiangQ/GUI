@@ -6,8 +6,8 @@
       v-for="(item,index) in title" 
       :ref="bindRef" 
       :key="index" 
-      @click="select(item.value)"  
-      :class="{'g-tabs-nav-item-selected':selected === item.value}" 
+      @click="select(item)"  
+      :class="{'g-tabs-nav-item-selected':selected === item.value, 'g-tabs-nav-item-disabled':item.disabled}" 
       :value="item.value"
     >
       {{item.label}}
@@ -39,7 +39,6 @@ export default{
     onMounted(()=>{
       console.log('onMounted:')
       watchEffect(() => {
-        console.log('根性了',selectedItem.value)
         const {width} = selectedItem.value.getBoundingClientRect()
         selectedLine.value.style.width = width + 'px'
         const {left: left1} = selectedItem.value.getBoundingClientRect()
@@ -62,16 +61,19 @@ export default{
     defaults.forEach(item => {
       title.push({
         label:item.props.title,
-        value:item.props.value
+        value:item.props.value,
+        disabled: (item.props.disabled !== undefined ) && (item.props.disabled !== false)
       })
       if(item && item.type !== Tab){
         throw new Error('Tabs 子标签必须是Tab')
       }
+      console.log(title)
     })
 
     // 触发点击事件跟新代码
-    const select = (value) => {
-      content.emit('update:selected', value)
+    const select = (item) => {
+      if (item.disabled === true) return
+      content.emit('update:selected', item.value)
     }
 
     // 绑定选中的ref
@@ -82,7 +84,11 @@ export default{
     }
     // 计算选中的值
     const selectedItemContent = computed(() => {
-      return defaults.find(item => item.props.value === props.selected)
+      const item =  defaults.find(item => {
+        console.log(item.props.value === props.selected && !item.props.disabled ,item.props.value === props.selected , item.props.disabled)
+      })
+      console.log(defaults,)
+      return defaults[0]
     })
     return {
       defaults, title, select, bindRef, selectedLine ,tabNav, selectedItemContent
@@ -121,10 +127,20 @@ export default{
         margin-left: 0;
       }
       margin:0 1rem;
+      &-disabled {
+        color: #ababab;
+        &:hover{
+          color: #ababab;
+        }
+        cursor: not-allowed;
+      }
     }
     &:last-child{
       margin-right: 0;
     }
+  }
+  &-content{
+    padding: 1em 0;
   }
 }
 </style>

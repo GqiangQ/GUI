@@ -4,7 +4,7 @@
 <template>
   <g-tabs v-model:selected="selected" @click="click">
     <g-tab title="标题一111" disabled value='one'>1</g-tab>
-    <g-tab title="标题二" value='two'>2</g-tab>
+    <g-tab title="标题二" disabled='' value='two'>2</g-tab>
     <g-tab title="标题三" value='three'>3</g-tab>
   </g-tabs>
 </template>
