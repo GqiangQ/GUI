@@ -1,35 +1,29 @@
 <demo>
-特殊用法
+常规用法
 </demo>
 <template>
-  <Button @click="success">成功</Button>
-  <Button @click="error">失败</Button>
-  <Button @click="info">提示</Button>
-  <Button @click="warning">消息</Button>
+  <g-tabs v-model:selected="selected" @click="click">
+    <g-tab title="标题一111" disabled value='one'>1</g-tab>
+    <g-tab title="标题二" disabled='' value='two'>2</g-tab>
+    <g-tab title="标题三" value='three'>3</g-tab>
+  </g-tabs>
 </template>
 <script lang="ts">
 import { ref } from 'vue'
 import Button from '../../../lib/Button.vue'
-import Alert from '../../../lib/Alert/index'
+import Tab from '../../../lib/Tab.vue'
+import Tabs from '../../../lib/Tabs.vue'
 export default {
   components: {
-    Button
+    'g-tab': Tab,
+    'g-tabs': Tabs
   },
   setup(){
-    const success = (type) => {
-      Alert.success('success')
-    }
-    const warning = (type) => {
-      Alert.wraning('wraning')
-    }
-    const info = (type) => {
-      Alert.info('info')
-    }
-    const error = (type) => {
-      Alert.error('error')
+    const selected = ref('three')
+    const click = (a) => {
     }
     return {
-      success,warning,info,error
+      selected,click
     }
   }
 }
