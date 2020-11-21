@@ -16,7 +16,7 @@
   </div>
   <!-- 显示的内容 -->
   <div class="g-tabs-content">
-      <component class="g-tabs-content-item" :is="selectedItemContent" :key="selectedItemContent.props.value"/>
+      <component v-if="false" class="g-tabs-content-item" :is="selectedItemContent" :key="selectedItemContent.props.value"/>
   </div> 
 </div> 
 </template>
@@ -76,7 +76,8 @@ export default{
 
     // 绑定选中的ref
     const bindRef = (el:HTMLDivElement) => {
-      if(el?.getAttribute('value') === props.selected){
+      console.log(el?.getAttribute('disabled'))
+      if(el?.getAttribute('value') === props.selected && !el?.getAttribute('disabled')){
         selectedItem.value = el
       }
     }
@@ -85,8 +86,8 @@ export default{
       const item =  defaults.find(item => {
         console.log(item.props.value === props.selected && !item.props.disabled ,item.props.value === props.selected , item.props.disabled)
       })
-      console.log(defaults,)
-      return defaults[0]
+      console.log(item)
+      return item
     })
     return {
       defaults, title, select, bindRef, selectedLine ,tabNav, selectedItemContent
