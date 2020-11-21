@@ -52,4 +52,5 @@ export default {
   display: inline-table;
   text-align: left;
 }
+#nprogress .bar { background: #12b9b9 !important;}
 </style>
