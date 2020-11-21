@@ -1,6 +1,6 @@
 <template>
   <div class="topnav">
-    <div class="logo">
+    <div class="logo" >
       <router-link to="/">LOGO</router-link>
       </div>
     <ul class="menu">
@@ -8,20 +8,23 @@
       <li>码云</li>
       <li>博客</li>
     </ul>
-    <svg class="icon toggleAside" @click="toggleMenu" aria-hidden="true">
+    <svg v-if="!showIcon" class="icon toggleAside" @click="toggleMenu" aria-hidden="true">
         <use xlink:href="#g-caidan"></use>
     </svg>
   </div>
 </template>
 <script lang="ts">
-import { inject, Ref } from "vue";
+import {useRoute} from 'vue-router'
+import { inject, ref, Ref } from "vue";
 export default {
   setup() {
+    const router = useRoute()
     const menuVisible = inject<Ref<boolean>>('menuVisible'); // get
     const toggleMenu = () => {
       menuVisible.value = !menuVisible.value;
     };
-    return { toggleMenu };
+    const showIcon = ref(router.path === '/')
+    return { toggleMenu, showIcon };
   },
 };
 </script>

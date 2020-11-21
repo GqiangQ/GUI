@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import TopNav from '../components/TopNav.vue';
+import TopNav from '../components/Topnav.vue'
 export default {
   name:'home',
   components: {TopNav},

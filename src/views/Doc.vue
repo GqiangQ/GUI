@@ -85,6 +85,10 @@ export default {
   }
 }
 aside {
+  @media (max-width: 500px) {
+    width:100%;
+  }
+  transition: all 2s;
   width: 260px;
   padding: 16px 0;
   background: #ffffff;
