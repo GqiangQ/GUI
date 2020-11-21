@@ -1,12 +1,16 @@
 <template>
   <div class="topnav">
-    <div class="logo">LOGO</div>
+    <div class="logo">
+      <router-link to="/">LOGO</router-link>
+      </div>
     <ul class="menu">
       <li>GitHub</li>
       <li>码云</li>
       <li>博客</li>
     </ul>
-    <span class="toggleAside" @click="toggleMenu"></span>
+    <svg class="icon toggleAside" @click="toggleMenu" aria-hidden="true">
+        <use xlink:href="#g-caidan"></use>
+    </svg>
   </div>
 </template>
 <script lang="ts">
@@ -52,7 +56,6 @@ export default {
   > .toggleAside {
     width: 24px;
     height: 24px;
-    background: red;
     position: absolute;
     left: 16px;
     top: 50%;

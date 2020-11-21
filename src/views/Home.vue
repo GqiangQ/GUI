@@ -5,15 +5,15 @@
       <h1>Vue UI框架</h1>
       <h2>用心创造，与君同行。</h2>
       <div class="btn">
-        <a target="_blank" href="https://gitee.com/xiuxiuyifan/z-vue3-ui" class="git">码云</a>
-        <a target="_blank" href="https://github.com/xiuxiuyifan/z-vue3-ui" class="git">GitHub</a>
-        <router-link to="/doc/tab">开始</router-link>
+        <a target="_blank" href="https://gitee.com/GQiangQ/Vue3-gui" class="git">码云</a>
+        <a target="_blank" href="https://github.com/GqiangQ" class="git">GitHub</a>
+        <router-link to="/doc/switch">开始</router-link>
       </div>
     </div>
     <div class="desc">
       <div class="item">
         <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-Vue"></use>
+          <use xlink:href="#g-vue"></use>
         </svg>
         <div>
           <div class="title">基于Vue3</div>
@@ -22,7 +22,7 @@
       </div>
       <div class="item">
         <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-typescript"></use>
+          <use xlink:href="#g-typescript"></use>
         </svg>
         <div>
           <div class="title">基于Typescript</div>
@@ -31,7 +31,7 @@
       </div>
       <div class="item">
         <svg class="icon" aria-hidden="true">
-          <use xlink:href="#icon-tubiao06"></use>
+          <use xlink:href="#g-weibiaoti-"></use>
         </svg>
         <div>
           <div class="title">代码易读</div>
