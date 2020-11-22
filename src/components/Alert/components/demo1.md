@@ -1,1 +1,1 @@
-绑定`v-model`到一个`Boolean`类型的变量
+页面顶部通告形式，默认有图标且type 为 'warning'。
