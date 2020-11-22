@@ -12,13 +12,13 @@
     9. Vuex
 
 ### 项目展示
-![首页](https://gqiangq.gitee.io/vue3-gui)
-![介绍](https://gqiangq.gitee.io/vue3-gui/#/doc/intro)
-![switch组件](https://gqiangq.gitee.io/vue3-gui/#/doc/switch)
-![alert组件](https://gqiangq.gitee.io/vue3-gui/#/doc/alert)
-![button组件](https://gqiangq.gitee.io/vue3-gui/#/doc/button)
-![dialog组件](https://gqiangq.gitee.io/vue3-gui/#/doc/dialog)
-![tabs组件](https://gqiangq.gitee.io/vue3-gui/#/doc/tabs)
+[首页](https://gqiangq.gitee.io/vue3-gui)
+[介绍](https://gqiangq.gitee.io/vue3-gui/#/doc/intro)
+[switch组件](https://gqiangq.gitee.io/vue3-gui/#/doc/switch)
+[alert组件](https://gqiangq.gitee.io/vue3-gui/#/doc/alert)
+[button组件](https://gqiangq.gitee.io/vue3-gui/#/doc/button)
+[dialog组件](https://gqiangq.gitee.io/vue3-gui/#/doc/dialog)
+[tabs组件](https://gqiangq.gitee.io/vue3-gui/#/doc/tabs)
 
 
 [ https://gqiangq.gitee.io/vue3-gui]( https://gqiangq.gitee.io/vue3-gui)
