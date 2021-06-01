@@ -2,19 +2,20 @@
   <div class="home">
     <top-nav></top-nav>
     <div class="content">
-      <h1>Vue UI框架</h1>
-      <h2>用心创造，与君同行。</h2>
-      <div class="btn">
-        <a target="_blank" href="https://gitee.com/GQiangQ/Vue3-gui" class="git">码云</a>
-        <a target="_blank" href="https://github.com/GqiangQ" class="git">GitHub</a>
-        <router-link to="/doc/switch">开始</router-link>
+      <div class="img">
+        <img src="../assets/logo1.png" alt="" srcset="">
+      </div>
+      <div class="text">
+        <h1>WeUI Design</h1>
+        <H4>面向学习开发的开源框架用于开拓眼界</H4>
+        <div class="btn">
+          <a target="_blank" href="https://qqiang-g.github.io/weui/" class="git">GitHub</a>
+          <router-link to="/doc">开始</router-link>
+        </div>
       </div>
     </div>
     <div class="desc">
       <div class="item">
-        <svg class="icon" aria-hidden="true">
-          <use xlink:href="#g-vue"></use>
-        </svg>
         <div>
           <div class="title">基于Vue3</div>
           <div class="d-x">使用了Vue3 Composition API</div>
@@ -64,7 +65,17 @@ $border_radius: 4px;
     background: linear-gradient(145deg, #c1e6e683 0%, #88dada83 100%);
     margin: 0 auto;
     clip-path: ellipse(80% 60% at 50% 40%);
-    padding: 200px 0 150px 0;
+    padding: 100px 0 150px 0;
+    display: flex;
+    flex-wrap: wrap;
+    >.img{
+      width: 100vw;
+      text-align: center;
+    }
+    >.text{
+      width: 100vw;
+      text-align: center;
+    }
 
     > h1 {
       text-align: center;

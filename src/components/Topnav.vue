@@ -1,12 +1,14 @@
 <template>
   <div class="topnav">
     <div class="logo" >
-      <router-link to="/">LOGO</router-link>
+      <router-link to="/">
+        <img class="icon-log" src="../assets/1.png" alt="" srcset="">
+      </router-link>
       </div>
     <ul class="menu">
-      <li>GitHub</li>
-      <li>码云</li>
-      <li>博客</li>
+      <li><router-link to="/doc/switch">开始</router-link></li>
+      <li><a target="_blank" href="https://github.com/qqiang-g/GUI" class="git">GitHub</a></li>
+      <!-- <li>博客</li> -->
     </ul>
     <svg v-if="!showIcon" class="icon toggleAside" @click="toggleMenu" aria-hidden="true">
         <use xlink:href="#g-caidan"></use>
@@ -32,7 +34,7 @@ export default {
 .topnav {
   background: #fff;
   display: flex;
-  padding: 16px;
+  padding: 14px;
   position: fixed;
   top: 0;
   left: 0;
@@ -42,6 +44,9 @@ export default {
   align-items: center;
   box-shadow: 0px 2px 1px 0px #12b9b92c;
   > .logo {
+    .icon-log{
+      max-height: 3em;
+    }
     max-width: 6em;
     margin-right: auto;
   }
@@ -68,6 +73,9 @@ export default {
   @media (max-width: 500px) {
     > .menu {
       display: none;
+      // a{
+
+      // }
     }
     > .logo {
       margin: 0 auto;
