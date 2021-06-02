@@ -2,7 +2,7 @@
 
 安装完本组件库之后在main.js中引入样式文件
 ```
-import 'z-vue3-ui/package/lib/z-vue-ui.css'
+import 'g-weui/package/lib/g-weui.css'
 ```
 
 Vue单文件组件中使用
@@ -13,7 +13,7 @@ Vue单文件组件中使用
 </template>
 
 <script>
-import {Button} from 'z-vue3-ui'
+import {Button} from 'g-weui'
 export default {
   name: 'App',
   components: {
@@ -23,4 +23,4 @@ export default {
 </script>
 ```
 
-下一节：[开始使用](#/doc/get-started)
+下一节：[组件](#/doc/get-started)
