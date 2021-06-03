@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vite build"
+    "build": "vite build",
+    "serve": "vite preview",
+    "lint": "eslint src",
+    "lint:fix": "eslint src --fix --ext .ts,.tsx"
   },
   "dependencies": {
     "github-markdown-css": "^4.0.0",
@@ -16,9 +19,17 @@
     "vuex": "^4.0.2"
   },
   "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.12.1",
+    "@typescript-eslint/parser": "^5.12.1",
     "@vitejs/plugin-vue": "^2.2.2",
+    "eslint": "^8.10.0",
+    "eslint-config-prettier": "^8.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "^8.5.0",
     "marked": "^1.2.2",
+    "prettier": "^2.5.1",
     "sass": "^1.27.0",
+    "typescript": "^4.5.5",
     "vite": "^2.8.4",
     "vite-plugin-md": "^0.11.8"
   }
