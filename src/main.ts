@@ -6,16 +6,15 @@ import 'github-markdown-css'
 import nprogress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-import { router } from './router';
+import { router } from './router'
 
-  router.beforeEach((to, from, next) => {
-    nprogress.start();
-    next();
-  })
-  router.afterEach(() => {
-    nprogress.done();
-  })
-
+router.beforeEach((to, from, next) => {
+  nprogress.start()
+  next()
+})
+router.afterEach(() => {
+  nprogress.done()
+})
 
 const app = createApp(App)
 app.use(router)

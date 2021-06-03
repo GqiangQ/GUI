@@ -3,8 +3,8 @@ export default defineComponent({
   props: {
     pageTitle: {
       type: String,
-      required: true,
-    },
+      required: true
+    }
   },
   setup(props) {
     return () => (
@@ -12,5 +12,5 @@ export default defineComponent({
         <div class="title">{props.pageTitle}</div>
       </div>
     )
-  },
+  }
 })

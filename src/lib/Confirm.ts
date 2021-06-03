@@ -1,17 +1,18 @@
 import Dialog from './Dialog.vue'
-import { createApp, h} from 'vue'
+import { createApp, h } from 'vue'
 export default (options) => {
   const { title, content, maskClosable, ok, cancel } = options
   const div = document.createElement('div')
   document.body.appendChild(div)
   const app = createApp({
-    render () {
+    render() {
       // h 第一个参数是组件 第二个是属性，第三个是solt
-      return h(Dialog,
+      return h(
+        Dialog,
         {
-          visible:true,
+          visible: true,
           'onUpdate:visible': (newVisible) => {
-            if (!newVisible){
+            if (!newVisible) {
               app.unmount(div)
               div.remove()
             }
@@ -20,11 +21,12 @@ export default (options) => {
           ok
         },
         {
-          title, content ,maskClosable
+          title,
+          content,
+          maskClosable
         }
       )
     }
-  }
-  )
+  })
   app.mount(div)
 }

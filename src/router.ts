@@ -1,8 +1,8 @@
-import { createWebHashHistory, createRouter } from "vue-router"
+import { createWebHashHistory, createRouter } from 'vue-router'
 // import marked from 'marked'
 
-import Home from "./views/Home.vue"
-import Doc from "./views/Doc.vue"
+import Home from './views/Home.vue'
+import Doc from './views/Doc.vue'
 import Intro from './views/Intro.md'
 import Started from './views/Started.md'
 import Install from './views/Install.md'
@@ -15,27 +15,25 @@ import SwitchDemo from './views/Switch/index.tsx'
 
 // import TabsDemo from './components/TabsDemo.vue'
 
-
-
-const history = createWebHashHistory();
+const history = createWebHashHistory()
 export const router = createRouter({
   history: history,
   routes: [
-    { path: "/", component: Home },
+    { path: '/', component: Home },
     {
-      path: "/doc",
+      path: '/doc',
       component: Doc,
       redirect: '/doc/intro',
       children: [
-        { path: "intro", component: Intro },
-        { path: "started", component: Started },
-        { path: "install", component: Install },
-        { path: "switch", component: SwitchDemo },
+        { path: 'intro', component: Intro },
+        { path: 'started', component: Started },
+        { path: 'install', component: Install },
+        { path: 'switch', component: SwitchDemo }
         // { path: "alert", component: Alert },
         // { path: "button", component: button },
         // { path: "dialog", component: dialog },
         // { path: "tabs", component: tabs },
-      ],
-    },
-  ],
+      ]
+    }
+  ]
 });
