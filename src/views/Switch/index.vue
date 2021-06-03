@@ -1,6 +1,6 @@
 <template>
-<h1>Switch 组件示例</h1>
-  <CodeCard :component="Demo1" :describe='md1' />
+  <h1>Switch 组件示例</h1>
+  <!-- <CodeCard :component="Demo1" :describe='md1' /> -->
  <!--  <card :component="demo2" :describe='md2' /> -->
   <!-- <div class="api markdown-body" v-html=""></div> -->
   <Use/>
@@ -17,12 +17,14 @@ import Use from './use.md'
 export default {
   components:{
     CodeCard,Use,
-    Demo1
+    // Demo1
     // md1, md2, use,
     // demo1, demo2
 
   },
   setup(){
+    console.log(Use);
+    
     return {md1}
   }
 }

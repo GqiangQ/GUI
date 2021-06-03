@@ -1,7 +1,7 @@
 <template>
   <div class="card">
     <div class="card-title">
-      {{component.__sourceCodeTitle}}
+      {{title}}
     </div>
     <div class="card-view">
       <component :is="component"/>
@@ -33,6 +33,7 @@ const Prism = (window as any).Prism
 let time = null
 export default {
   props: {
+    title: String,
     component:Object,
     describe:String,
   },
