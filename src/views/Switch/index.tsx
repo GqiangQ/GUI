@@ -1,16 +1,11 @@
 import { defineComponent } from 'vue'
 export default defineComponent({
-  props: {
-    pageTitle: {
-      type: String,
-      required: true
-    }
-  },
   setup(props) {
     return () => (
-      <div>
-        <div class="title">{props.pageTitle}</div>
-      </div>
+      <>
+      <h1>Switch 组件示例</h1>
+        <div class="title">props.pageTitle</div>
+      </>
     )
   }
 })
